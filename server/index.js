@@ -7,7 +7,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 // DB setup
-const mongoUrl = process.env.MONGODB_URI  || 'mongodb://localhost/insert-name';
+const mongoUrl = process.env.MONGODB_URI  || 'mongodb://localhost/golden-favors';
 
 mongoose.connect(mongoUrl, err => {
   console.log(err || `MongoDB connected to ${mongoUrl}`);
@@ -19,9 +19,16 @@ app.use(morgan('dev'));
 app.use(bodyParser.json({ type: '*/*' }));
 app.use(express.static('public'))
 
+
+// routers
+app.use('/api', require('./routes/api'))
+
+
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '..', '/index.html'));
 });
+
+
 
 
 
