@@ -7,6 +7,6 @@ const favorSchema = new Schema({
 });
 
 
-const ModelClass = mongoose.model('favor', userSchema);
+const Favor = mongoose.model('favor', favorSchema);
 
-module.exports = ModelClass;
+module.exports = Favor;
