@@ -6,6 +6,8 @@ const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
 
+require('dotenv').config();
+
 // DB setup
 const mongoUrl = process.env.MONGODB_URI  || 'mongodb://localhost/golden-favors';
 
@@ -24,9 +26,9 @@ app.use(express.static('public'))
 app.use('/', require('./routes/api'))
 
 
-// app.get('*', function(req, res) {
-//     res.sendFile(path.join(__dirname, '..', '/index.html'));
-// });
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '..', '/index.html'));
+});
 
 
 
