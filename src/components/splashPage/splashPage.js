@@ -2,7 +2,7 @@ import React from 'react';
 
 const SplashPage = (props) => (
 
-  <div>Welcome!</div>
+  <div>Got Favors?</div>
 )
 
 export default SplashPage;

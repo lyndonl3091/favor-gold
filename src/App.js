@@ -8,7 +8,7 @@ export class App extends Component {
 
 
     return (
-      <p>Hello</p>
+      <SplashPage />
     )
   }
 
