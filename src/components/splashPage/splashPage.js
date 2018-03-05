@@ -1,12 +1,22 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
+import Paper from 'material-ui/Paper';
+
+
+const pageStyle = {
+  height: '40%',
+  width: '100%',
+  margin: '0 auto',
+  textAlign: 'center',
+  display: 'inline-block',
+  padding: '5%',
+  marginTop: '5%',
+};
 
 const SplashPage = (props) => (
   <div>
-  <AppBar
-    title="Title"
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
-  />
+    <Paper style={pageStyle} zDepth={5}>
+      <h4>Hello</h4>
+    </Paper>
   </div>
 )
 
