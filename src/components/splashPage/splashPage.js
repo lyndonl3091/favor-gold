@@ -1,8 +1,13 @@
 import React from 'react';
+import AppBar from 'material-ui/AppBar';
 
 const SplashPage = (props) => (
-
-  <div>Got Favors?</div>
+  <div>
+  <AppBar
+    title="Title"
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+  />
+  </div>
 )
 
 export default SplashPage;

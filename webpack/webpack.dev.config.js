@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const plugins = [
   new webpack.HotModuleReplacementPlugin(),
@@ -10,7 +11,7 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: path.join(__dirname, '/public'),
+    path: path.join(__dirname, '..', '/public'),
     publicPath: '/',
     filename: 'bundle.js'
   },
