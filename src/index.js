@@ -18,7 +18,7 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <Router>
         <Switch>
-          <Route path={toHome} component={App} />
+          <Route exact path={toHome} component={App} />
           <Route path={toLogin} component={Login} />
         </Switch>
       </Router>
