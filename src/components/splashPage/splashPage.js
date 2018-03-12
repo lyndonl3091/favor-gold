@@ -1,21 +1,22 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 
+import Button from '../common/Button';
+
 
 const pageStyle = {
-  height: '40%',
-  width: '100%',
-  margin: '0 auto',
+  height: '100%',
+  width: '50%',
+  margin: 'auto',
   textAlign: 'center',
-  display: 'inline-block',
-  padding: '5%',
-  marginTop: '5%',
+  padding: '10px',
 };
 
 const SplashPage = (props) => (
   <div>
     <Paper style={pageStyle} zDepth={5}>
       <h4>Hello</h4>
+      <Button />
     </Paper>
   </div>
 )

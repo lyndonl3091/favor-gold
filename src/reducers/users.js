@@ -1,6 +1,7 @@
 import * as types from '../actions/types';
 
-export default function(state = [], action) {
-  
+const initialState = { isAuthenticated: false }
+export default function(state = initialState, action) {
+
   return state;
 }
