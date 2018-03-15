@@ -47,20 +47,23 @@ class Signin extends Component {
   }
 
   render() {
-    <div>
-      <form onSubmite=>
-        <FormGroup>
-          <ControlLabel> Sign up for an account</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.username}
-            placeholder="Enter username"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-      </form>
-    </div>
+    return (
+      <div>
+        <form>
+          <FormGroup>
+            <ControlLabel> Sign up for an account</ControlLabel>
+            <FormControl
+              type="text"
+              value={this.state.username}
+              placeholder="Enter username"
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+        </form>
+      </div>
+    )
   }
+
 };
 
 export default Signin;
