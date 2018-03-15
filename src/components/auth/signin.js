@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
-import * as actions from '../../actions'
+import * as actions from '../../actions';
+import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
 // class Signin extends Component {
 //
@@ -33,9 +33,33 @@ import * as actions from '../../actions'
 // }, null, actions)(Signin)
 
 class Signin extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: ''
+    }
+  }
+
+  handleChange = (e) => {
+    console.log(e.target.value);
+    this.setState({ username: e.target.value});
+  }
 
   render() {
-    <div>Singin</div>
+    <div>
+      <form onSubmite=>
+        <FormGroup>
+          <ControlLabel> Sign up for an account</ControlLabel>
+          <FormControl
+            type="text"
+            value={this.state.username}
+            placeholder="Enter username"
+            onChange={this.handleChange}
+          />
+        </FormGroup>
+      </form>
+    </div>
   }
 };
 
