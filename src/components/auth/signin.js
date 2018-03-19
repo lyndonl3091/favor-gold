@@ -1,64 +1,55 @@
 import React, { Component } from 'react';
 import * as actions from '../../actions';
-import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
-
-// class Signin extends Component {
-//
-//   handleFormSubmit({ email, password}) {
-//     this.props.singinUser({ email, password });
-//   }
-//
-//   render() {
-//     const { handleSubmit, fields: { email, password}} = this.props;
-//
-//     return (
-//         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-//           <fieldset className="form-group">
-//             <label>Email:</label>
-//             <input {...email} className="form-control" />
-//           </fieldset>
-//           <fieldset className="form-group">
-//             <label>Password:</label>
-//             <input {...password} className="form-control" />
-//           </fieldset>
-//           <button action="submit" className="btn btn-primary">Sign In</button>
-//         </form>
-//     )
-//   }
-// }
-//
-// export default reduxForm({
-//   form: 'signin',
-//   fields: ['email', 'password']
-// }, null, actions)(Signin)
+// import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import { TextField, RaisedButton } from 'material-ui';
 
 class Signin extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: ''
+      username: '',
+      password: ''
     }
   }
 
-  handleChange = (e) => {
-    console.log(e.target.value);
-    this.setState({ username: e.target.value});
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state)
+  };
+
+  inputUsername(username) {
+    this.setState({ username })
+
+  };
+
+  inputPassword(password) {
+    this.setState({ password });
   }
 
   render() {
     return (
       <div>
-        <form>
-          <FormGroup>
-            <ControlLabel> Sign up for an account</ControlLabel>
-            <FormControl
-              type="text"
-              value={this.state.username}
-              placeholder="Enter username"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+        <form onSubmit={e => this.handleSubmit(e)}>
+
+          <TextField
+            hintText="Username"
+            floatingLabelText="Username"
+            onChange={e => this.inputUsername(e.target.value)}
+          /> <br/>
+
+          <TextField
+            hintText="Password"
+            floatingLabelText="Password"
+            type="password"
+            onChange={e => this.inputPassword(e.target.value)}
+          /><br/>
+
+          <RaisedButton
+            type="Submit"
+            label="Sign Up"
+            primary
+          />
         </form>
       </div>
     )
