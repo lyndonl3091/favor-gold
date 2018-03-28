@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -6,7 +8,6 @@ const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
 
-require('dotenv').config();
 
 // DB setup
 const mongoUrl = process.env.MONGODB_URI  || 'mongodb://localhost/golden-favors';
@@ -35,7 +36,7 @@ app.get('*', function(req, res) {
 
 
 // Server setup
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server listening on:', port);
