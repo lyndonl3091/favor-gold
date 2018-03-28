@@ -1,13 +1,12 @@
 require('dotenv').config();
 
 const express = require('express');
-const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
+const router = require('./router');
 const mongoose = require('mongoose');
-
 
 // DB setup
 const mongoUrl = process.env.MONGODB_URI  || 'mongodb://localhost/golden-favors';
@@ -20,23 +19,11 @@ mongoose.connect(mongoUrl, err => {
 // App setup
 app.use(morgan('dev'));
 app.use(bodyParser.json({ type: '*/*' }));
-app.use(express.static('public'))
-
-
-// routers
-app.use('/', require('./routes/api'))
-
-
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, '..', '/index.html'));
-});
-
-
-
+router(app);
 
 
 // Server setup
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server listening on:', port);

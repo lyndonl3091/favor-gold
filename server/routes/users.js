@@ -13,18 +13,6 @@ router.get('/', User.authMiddleware, (req,res) => {
   });
 });
 
-router.post('/login', (req, res) => {
-  User.authenticate(req.body, (err, token) => {
-    res.status(err ? 400 : 200).send(err || {token: token});
-  });
-});
-
-router.post('/signup', (req, res) => {
-  User.register(req.body, (err, token) => {
-    res.status(err ? 400 : 200).send(err || {token: token});
-  });
-});
-
 router.get('/profile', User.authMiddleware, (req, res) => {
   res.send(req.user);
 });
