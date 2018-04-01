@@ -1,21 +1,19 @@
 const Authentication = require('./controllers/authentication');
 const passportService = require('./services/passport');
 const passport = require('passport');
+const express = require('express');
 
 const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false });
 
 module.exports = function(app) {
 
-  // app.use(express.static('public'));
-  //
-  // app.get('*', function(req, res) {
-  //   res.sendFile(path.join(__dirname, '..', '/index.html'));
-  // });
+  app.use(express.static('public'));
 
-  app.get('/', requireAuth, function(req, res) {
-    res.send({  hi: 'there' })
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '..', '/index.html'));
   });
+
   app.post('/signin', requireSignin, Authentication.signin);
   app.post('/signup', Authentication.signup);
 

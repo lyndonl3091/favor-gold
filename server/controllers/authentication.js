@@ -5,10 +5,20 @@ const secret = process.env.SECRET;
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
   return jwt.encode({ sub: user.id, iat: timestamp }, secret);
-}
+};
 
 exports.signin = function(req, res, next) {
-  res.send({ token: tokenForUser(req.user)});
+  const email = req.body.email;
+
+  // create condition to check if user exist
+  User.findOne({email: email}, (err, user) => {
+
+    if(user) {
+      res.send({ token: tokenForUser(req.user)});
+    }
+    
+  });
+
 };
 
 exports.signup = function(req, res, next) {
