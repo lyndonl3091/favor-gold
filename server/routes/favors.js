@@ -7,10 +7,17 @@ const Favor = require('../models/favor');
 
 let router = express.Router();
 
-router.get('/favor', (req, res) => {
+// get ALL favor
+router.get('/', (req, res) => {
   Favor.find({}, (err, favor) => {
     res.status(err ? 400 : 200).send(err || favor);
   });
 });
+
+// post favors
+
+
+
+// update favor
 
 module.exports = router;

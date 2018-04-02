@@ -2,6 +2,7 @@ const Authentication = require('./controllers/authentication');
 const passportService = require('./services/passport');
 const passport = require('passport');
 const express = require('express');
+const path = require('path');
 
 const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false });
@@ -17,5 +18,5 @@ module.exports = function(app) {
   app.post('/signin', requireSignin, Authentication.signin);
   app.post('/signup', Authentication.signup);
 
-  // app.use('/api', require('./routes/api'));
+  app.use('/api', require('./routes/api'));
 }
