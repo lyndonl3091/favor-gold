@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
-import * as actions from '../../actions';
+import { connect } from 'react-redux';
 // import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { TextField, RaisedButton } from 'material-ui';
+import { string } from 'prop-types';
 
-class Signin extends Component {
+import { signUpUser } from '../../actions/authActions';
+
+export class Signin extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      email: '',
+      firstName: '',
+      lastName: '',
     }
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state)
+
+    this.props.signUp(this.state);
   };
 
   inputUsername(username) {
@@ -25,7 +32,19 @@ class Signin extends Component {
 
   inputPassword(password) {
     this.setState({ password });
-  }
+  };
+
+  inputEmail(email) {
+    this.setState({ email });
+  };
+
+  inputFirstName(name) {
+    this.setState({ name });
+  };
+
+  inputLastName(name) {
+    this.setState({ name });
+  };
 
   render() {
     return (
@@ -45,6 +64,27 @@ class Signin extends Component {
             onChange={e => this.inputPassword(e.target.value)}
           /><br/>
 
+          <TextField
+            hintText="Email"
+            floatingLabelText="Email"
+            type="text"
+            onChange={e => this.inputEmail(e.target.value)}
+          /><br/>
+
+          <TextField
+            hintText="First Name"
+            floatingLabelText="First Name"
+            type="text"
+            onChange={e => this.inputFirstName(e.target.value)}
+          /><br/>
+
+          <TextField
+            hintText="Last Name"
+            floatingLabelText="Last Name"
+            type="text"
+            onChange={e => this.inputLastName(e.target.value)}
+          /><br/>
+
           <RaisedButton
             type="Submit"
             label="Sign Up"
@@ -57,4 +97,16 @@ class Signin extends Component {
 
 };
 
-export default Signin;
+const mapStateToProps = (state) => {
+  return {
+
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: user => dispatch(signUpUser(user)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);
