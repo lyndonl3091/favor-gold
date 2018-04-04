@@ -6,7 +6,7 @@ import { string } from 'prop-types';
 
 import { signUpUser } from '../../actions/authActions';
 
-export class Signin extends Component {
+export class SignUp extends Component {
   constructor(props) {
     super(props);
 
@@ -109,4 +109,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signin);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

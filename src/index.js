@@ -7,9 +7,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import App from './App';
-import Login from './components/auth/signin';
+import SignUp from './components/auth/SignUp';
 import reducers from './reducers';
-import { toHome, toLogin } from './routePaths';
+import { toHome, toLogin, toSignUp } from './routePaths';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
@@ -19,7 +19,7 @@ ReactDOM.render(
       <Router>
         <Switch>
           <Route exact path={toHome} component={App} />
-          <Route path={toLogin} component={Login} />
+          <Route path={toSignUp} component={SignUp} />
         </Switch>
       </Router>
     </Provider>
