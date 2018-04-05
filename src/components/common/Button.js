@@ -2,12 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import { toLogin } from '../../routePaths';
-
 const Button = (props) => (
 
-  <Link to={toLogin}>
-    <RaisedButton label="Hello" />
+  <Link to={props.route}>
+    <RaisedButton label={props.label} />
   </Link>
 
 )

@@ -1,7 +1,17 @@
 import * as types from '../actions/types';
 
-const initialState = { isAuthenticated: false }
-export default function(state = initialState, action) {
+const initialState = {
+  token: null,
+  userId: null,
+  error: null,
+  loading: false
+}
 
-  return state;
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case types.AUTH_START:
+      return {}
+    default:
+      return state;
+  }
 }
