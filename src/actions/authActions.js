@@ -5,11 +5,19 @@ export const signUpUser = (user) => {
   return function(dispatch) {
     signUp(user)
       .then(response => {
-        console.log('res: ', response);
+        // sign user in
       })
       .catch(() => {
-        
+
       })
   }
 
+
+export const signinUser = ({ email, password }) => {
+  return function(dispatch) {
+    signIn(user)
+      .then(res => {
+        dispatch({ type: types.AUTH_USER})
+      })
+  }
 }
