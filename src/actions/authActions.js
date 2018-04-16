@@ -11,13 +11,20 @@ export const signUpUser = (user) => {
 
       })
   }
+}
 
 
-export const signinUser = ({ email, password }) => {
+export const signInUser = ({ email, password }) => {
   return function(dispatch) {
     signIn(user)
       .then(res => {
         dispatch({ type: types.AUTH_USER})
+        // save JWT token to localStorage
+        localStorage.setItem('token', res.data.token);
+        // redirect to home route
       })
+      .catch(() => {
+
+      });
   }
 }

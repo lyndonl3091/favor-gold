@@ -15,10 +15,10 @@ const pageStyle = {
 const SplashPage = (props) => (
   <div>
     <Paper style={pageStyle} zDepth={5}>
-      <h4>Hello</h4>
+      <h4>What's your favor?</h4>
       <Button
         route={toSignUp}
-        label="Sign Up"
+        label="Sign Up/Log In"
       />
     </Paper>
   </div>
