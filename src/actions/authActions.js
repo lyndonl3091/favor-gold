@@ -23,8 +23,15 @@ export const signInUser = ({ email, password }) => {
         localStorage.setItem('token', res.data.token);
         // redirect to home route
       })
-      .catch(() => {
-
+      .catch((error) => {
+        dispatch(authError(error));
       });
+  }
+}
+
+export function authError(error) {
+  return {
+    type: type.AUTH_ERROR,
+    payload: error
   }
 }

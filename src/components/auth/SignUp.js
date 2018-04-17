@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom'
 import { TextField, RaisedButton } from 'material-ui';
 import { string } from 'prop-types';
 
@@ -45,6 +46,12 @@ export class SignUp extends Component {
   inputLastName(name) {
     this.setState({ name });
   };
+
+  renderAlert() {
+    if( this.props.errorMessage ) {
+      // show snackbar error message
+    }
+  }
 
   render() {
     return (
@@ -99,7 +106,7 @@ export class SignUp extends Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    errorMessage: state.auth.error
   }
 };
 
@@ -109,4 +116,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SignUp));
