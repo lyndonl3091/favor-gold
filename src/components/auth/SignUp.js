@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 // import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom'
 import { TextField, RaisedButton } from 'material-ui';
-import { string } from 'prop-types';
+import { string } from 'prop-types'
 
-import { signUpUser } from '../../actions/authActions';
+import { signUpUser } from '../../actions/authActions'
+import 
 
 export class SignUp extends Component {
   constructor(props) {
