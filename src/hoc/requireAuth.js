@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import * as routes from '../../routePaths';
+import * as routes from '../routePaths';
 
 export default function(ComposedComponent) {
   class Authentication extends Component {

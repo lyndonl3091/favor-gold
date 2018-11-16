@@ -6,7 +6,6 @@ import { TextField, RaisedButton } from 'material-ui';
 import { string } from 'prop-types'
 
 import { signUpUser } from '../../actions/authActions'
-import 
 
 export class SignUp extends Component {
   constructor(props) {

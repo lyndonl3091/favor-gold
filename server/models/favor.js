@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 const favorSchema = new Schema({
   title: String,
   description: String,
+  datePosted: { type: Date, default: Date.now },
+  location: { type: 'Point' }
 });
 
 
