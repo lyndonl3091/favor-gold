@@ -6,3 +6,7 @@ export const getData = () => {
     payload: 'test'
   }
 }
+
+export const addFavor = params => {
+  
+}
