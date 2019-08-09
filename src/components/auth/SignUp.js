@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import { connect } from 'react-redux';
 // import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom'
