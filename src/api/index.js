@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const getData = () => {
+export const getFavors = () => {
   axios.get();
 }
