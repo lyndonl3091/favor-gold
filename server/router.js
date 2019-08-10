@@ -9,7 +9,9 @@ const requireSignin = passport.authenticate('local', { session: false });
 
 module.exports = function(app) {
 
-  app.use(express.static('public'));
+  app.use(express.static('public'))
+
+  app.use('/favor', require('./routes/api'))
 
   app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '..', '/index.html'));
@@ -18,5 +20,5 @@ module.exports = function(app) {
   app.post('/signin', requireSignin, Authentication.signin);
   app.post('/signup', Authentication.signup);
 
-  app.use('/api', require('./routes/api'));
+  // app.use('/api', require('./routes/api'));
 }

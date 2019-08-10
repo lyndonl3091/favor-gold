@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 // post favors
 
 
-
 // update favor
 
 module.exports = router;
