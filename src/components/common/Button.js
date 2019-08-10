@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import RaisedButton from 'material-ui/RaisedButton';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import RaisedButton from 'material-ui/RaisedButton'
 
 const Button = (props) => (
 
