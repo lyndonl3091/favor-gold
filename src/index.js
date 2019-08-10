@@ -2,24 +2,35 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Map } from 'immutable'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createSagaMiddleware from 'redux-saga'
+import logger from 'redux-logger'
 import Nav from 'components/common/Navbar'
 
 import App from './App'
 import SignUp from './components/auth/SignUp'
-import reducers from './reducers'
-import { toHome, toLogin, toSignUp } from './routePaths'
+import rootReducer from './reducers'
+import {
+  toHome,
+  // toLogin,
+  toSignUp
+} from './routePaths'
 
 const sagaMiddleware = createSagaMiddleware()
+const initialState = Map({})
 
-const createStoreWithMiddleware = applyMiddleware(sagaMiddleware)(createStore);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const createStoreWithMiddleware = applyMiddleware(logger, sagaMiddleware)
+
+const enhancer = composeEnhancers(createStoreWithMiddleware)
+const store = createStore(rootReducer, initialState, enhancer)
 
 ReactDOM.render(
   <MuiThemeProvider>
-    <Provider store={createStoreWithMiddleware(reducers)}>
+    <Provider store={store}>
       <Router>
         <div className="app">
           <Nav />
