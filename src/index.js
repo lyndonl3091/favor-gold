@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createSagaMiddleware from 'redux-saga'
+import Nav from 'components/common/Navbar'
 
 import App from './App'
 import SignUp from './components/auth/SignUp'
@@ -21,11 +22,11 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <Router>
         <div className="app">
-
-        <Switch>
-          <Route exact path={toHome} component={App} />
-          <Route path={toSignUp} component={SignUp} />
-        </Switch>
+          <Nav />
+          <Switch>
+            <Route exact path={toHome} component={App} />
+            <Route path={toSignUp} component={SignUp} />
+          </Switch>
         </div>
       </Router>
     </Provider>
