@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from 'axios'
 
-exports const getData = () => {
+export const getData = () => {
   axios.get();
-};
+}
