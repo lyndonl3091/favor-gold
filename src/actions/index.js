@@ -1,12 +1,4 @@
-import * as types from './types';
+import { createAsyncActions } from 'utils'
+import * as TYPES from './types'
 
-export const getData = () => {
-  return {
-    type: types.GET_DATA,
-    payload: 'test'
-  }
-}
-
-export const addFavor = params => {
-  
-}
+export const getFavors = createAsyncActions(TYPES.GET_FAVORS)
