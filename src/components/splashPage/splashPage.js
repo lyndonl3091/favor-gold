@@ -12,7 +12,7 @@ const pageStyle = {
   padding: '10px',
 };
 
-const SplashPage = (props) => (
+const SplashPage = () => (
   <div>
     <Paper style={pageStyle} zDepth={5}>
       <h4>What's your favor?</h4>

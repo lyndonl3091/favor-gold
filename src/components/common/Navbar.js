@@ -3,10 +3,11 @@ import {
   AppBar,
   Toolbar,
   // Typography,
-  Button,
   IconButton,
 } from '@material-ui/core'
+import Button from 'components/common/Button'
 import MenuIcon from '@material-ui/icons/Menu'
+import { toHome, toLogin, toSignUp } from 'routes'
 
 
 
@@ -17,8 +18,8 @@ const Bar = () => (
           <IconButton edge="start" color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Log In</Button>
+          <Button color="inherit" route={toHome}>Home</Button>
+          <Button color="inherit" route={toSignUp}>Log In/Sign Up</Button>
         </Toolbar>
         </AppBar>
     </>

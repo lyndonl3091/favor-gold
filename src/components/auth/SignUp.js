@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 // import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom'
@@ -7,106 +7,63 @@ import { TextField, RaisedButton } from 'material-ui';
 
 import { signUpUser } from '../../actions/authActions'
 
-export class SignUp extends Component {
-  constructor(props) {
-    super(props);
+export const SignUp = props => {
 
-    this.state = {
-      username: '',
-      password: '',
-      email: '',
-      firstName: '',
-      lastName: '',
-    }
-  };
+  const [userName, setUserName] = useState('')
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
 
-  handleSubmit(e) {
-    e.preventDefault();
+  return (
+    <>
+      <form onSubmit={e => this.handleSubmit(e)}>
 
-    this.props.signUp(this.state);
-  };
+        <TextField
+          hintText="Username"
+          floatingLabelText="Username"
+          onChange={e => this.inputUsername(e.target.value)}
+        /> <br/>
 
-  inputUsername(username) {
-    this.setState({ username })
+        <TextField
+          hintText="Password"
+          floatingLabelText="Password"
+          type="password"
+          onChange={e => this.inputPassword(e.target.value)}
+        /><br/>
 
-  };
+        <TextField
+          hintText="Email"
+          floatingLabelText="Email"
+          type="text"
+          onChange={e => this.inputEmail(e.target.value)}
+        /><br/>
 
-  inputPassword(password) {
-    this.setState({ password });
-  };
+        <TextField
+          hintText="First Name"
+          floatingLabelText="First Name"
+          type="text"
+          onChange={e => this.inputFirstName(e.target.value)}
+        /><br/>
 
-  inputEmail(email) {
-    this.setState({ email });
-  };
+        <TextField
+          hintText="Last Name"
+          floatingLabelText="Last Name"
+          type="text"
+          onChange={e => this.inputLastName(e.target.value)}
+        /><br/>
 
-  inputFirstName(name) {
-    this.setState({ name });
-  };
-
-  inputLastName(name) {
-    this.setState({ name });
-  };
-
-  renderAlert() {
-    if( this.props.errorMessage ) {
-      // show snackbar error message
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <form onSubmit={e => this.handleSubmit(e)}>
-
-          <TextField
-            hintText="Username"
-            floatingLabelText="Username"
-            onChange={e => this.inputUsername(e.target.value)}
-          /> <br/>
-
-          <TextField
-            hintText="Password"
-            floatingLabelText="Password"
-            type="password"
-            onChange={e => this.inputPassword(e.target.value)}
-          /><br/>
-
-          <TextField
-            hintText="Email"
-            floatingLabelText="Email"
-            type="text"
-            onChange={e => this.inputEmail(e.target.value)}
-          /><br/>
-
-          <TextField
-            hintText="First Name"
-            floatingLabelText="First Name"
-            type="text"
-            onChange={e => this.inputFirstName(e.target.value)}
-          /><br/>
-
-          <TextField
-            hintText="Last Name"
-            floatingLabelText="Last Name"
-            type="text"
-            onChange={e => this.inputLastName(e.target.value)}
-          /><br/>
-
-          <RaisedButton
-            type="Submit"
-            label="Sign Up"
-            primary
-          />
-        </form>
-      </div>
-    )
-  }
-
-};
+        <RaisedButton
+          type="Submit"
+          label="Sign Up"
+          primary
+        />
+      </form>
+    </>
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
-    errorMessage: state.auth.error
+    // errorMessage: state && state.auth
   }
 };
 
