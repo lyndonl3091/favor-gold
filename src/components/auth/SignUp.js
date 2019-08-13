@@ -13,14 +13,29 @@ export const SignUp = props => {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
 
+  const handleUserName = e => {
+    const val = e.target.value
+    setUserName(val)
+  }
+
+  const handleSubmit = () => {
+    // dispatch action to submit form
+
+    const params = {
+      userName,
+      password,
+      email
+    }
+  }
+
   return (
     <>
-      <form onSubmit={e => this.handleSubmit(e)}>
+      <form onSubmit={handleSubmit}>
 
         <TextField
           hintText="Username"
           floatingLabelText="Username"
-          onChange={e => this.inputUsername(e.target.value)}
+          onChange={handleUserName}
         /> <br/>
 
         <TextField
@@ -61,13 +76,14 @@ export const SignUp = props => {
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    // errorMessage: state && state.auth
+    errorMessage: state && state.auth && state.auth.error ?
+      state.auth.error : ''
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     signUp: user => dispatch(signUpUser(user)),
   }
