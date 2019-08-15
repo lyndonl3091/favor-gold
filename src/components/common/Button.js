@@ -1,18 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import RaisedButton from 'material-ui/RaisedButton'
+// import RaisedButton from 'material-ui/RaisedButton'
+import { Button } from '@material-ui/core'
 
-const Button = ({
+const dfButton = ({
   children,
+  color,
   route = '/',
   label
 }) => (
 
   <Link to={route}>
-    <RaisedButton label={label ? label : null}> 
+    <Button color={color} label={label ? label : null} style={{ color: 'white'}}> 
       {children}
-    </RaisedButton>
+    </Button>
   </Link>
 )
 
@@ -20,4 +22,4 @@ Button.propTypes = {
   route: PropTypes.string.isRequired,
 }
 
-export default Button;
+export default dfButton;
