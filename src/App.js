@@ -18,6 +18,10 @@ import { ColumnFlexWrapper } from './styles';
 
 export class App extends Component {
 
+  componentDidMount() {
+    console.log('Get all favors')
+  }
+
   render() {
 
 
@@ -32,7 +36,7 @@ export class App extends Component {
 
         </FlexWrapper>
     </ColumnFlexWrapper>
-       
+
     )
   }
 
