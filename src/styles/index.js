@@ -10,3 +10,14 @@ export const SplashWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
+
+export const ColumnFlexWrapper = styled.div`
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+`
+
+export const FlexWrapper = styled.div`
+  flex: 1;
+`
