@@ -25,7 +25,7 @@ export const Favors = ({
 
   useEffect(() => {
     getFavors()
-  })
+  }, [favors])
 
   return (
     <>
