@@ -21,9 +21,17 @@ export const Favors = ({
   getFavors
 }) => {
 
-  const [listOfFavors, setFavors] = useState([])
+  const [listOfFavors, setFavors] = useState(favors)
 
   useEffect(() => {
-    
-  }, favors)
+    getFavors()
+  })
+
+  return (
+    <>
+      <div>List of Fvors</div>
+    </>
+  )
 }
+
+export default Favors
