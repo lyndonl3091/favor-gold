@@ -5,7 +5,10 @@ import {
 } from 'styles'
 import { ColumnFlexWrapper } from './styles';
 import { Paper } from '@material-ui/core'
-import { toSignUp } from 'routes'
+import {
+  // toSignUp,
+  toAddFavor
+} from 'routes'
 import Button from 'components/common/Button'
 
 const pageStyle = {
@@ -26,8 +29,12 @@ export class App extends Component {
     return (
       <ColumnFlexWrapper>
         <FlexWrapper>
-          <Paper style={pageStyle} zDepth={5}>
+          <Paper style={pageStyle}>
             <h1>What's yout favor?</h1>
+            <Button
+              route={toAddFavor}
+              label="Add Favor"
+            />
           </Paper>
         </FlexWrapper>
 

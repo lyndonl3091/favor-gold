@@ -10,12 +10,14 @@ import createSagaMiddleware from 'redux-saga'
 import logger from 'redux-logger'
 import Nav from 'components/common/Navbar'
 
+import AddFavor from 'views/AddFavor'
+
 import App from './App'
 import SignUp from './components/auth/SignUp'
 import rootReducer from './reducers'
 import {
+  toAddFavor,
   toHome,
-  // toLogin,
   toSignUp
 } from './routePaths'
 
@@ -37,6 +39,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path={toHome} component={App} />
             <Route path={toSignUp} component={SignUp} />
+            <Route path={toAddFavor} component={AddFavor} />
           </Switch>
         </div>
       </Router>

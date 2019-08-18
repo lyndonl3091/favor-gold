@@ -5,13 +5,14 @@ import { Button } from '@material-ui/core'
 
 const dfButton = ({
   children,
-  color,
+  color = 'default',
   route = '/',
-  label
+  label,
+  style = { color: 'white' },
 }) => (
 
   <Link to={route}>
-    <Button color={color} label={label ? label : null} style={{ color: 'white'}}> 
+    <Button color={color} label={label ? label : null} style={style}> 
       {children}
     </Button>
   </Link>

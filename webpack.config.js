@@ -48,7 +48,8 @@ module.exports = {
         // styles: path.resolve(__dirname, 'src/styles'),
         types: path.resolve(__dirname, 'src/actions/types'),
         routes: path.resolve(__dirname, 'src/routePaths'),
-        styles: path.resolve(__dirname, 'src/styles')
+        styles: path.resolve(__dirname, 'src/styles'),
+        views: path.resolve(__dirname, 'src/views')
       }
     },
     plugins: [
