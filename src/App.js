@@ -4,31 +4,31 @@ import {
   FlexWrapper
 } from 'styles'
 import { ColumnFlexWrapper } from './styles';
-// import { Paper } from '@material-ui/core'
-// import { toSignUp } from 'routes'
-// import Button from 'components/common/Button'
+import { Paper } from '@material-ui/core'
+import { toSignUp } from 'routes'
+import Button from 'components/common/Button'
 
-// const pageStyle = {
-//   height: '100%',
-//   width: '50%',
-//   margin: 'auto',
-//   textAlign: 'center',
-//   padding: '10px',
-// };
+const pageStyle = {
+  height: '100%',
+  width: '50%',
+  margin: 'auto',
+  textAlign: 'center',
+  padding: '10px',
+};
 
 export class App extends Component {
 
   render() {
-
-
     return (
       <ColumnFlexWrapper>
         <FlexWrapper>
-          <h1>Test</h1>
+          <Paper style={pageStyle} zDepth={5}>
+            <h1>What's yout favor?</h1>
+          </Paper>
         </FlexWrapper>
 
         <FlexWrapper>
-          <h1>Favors</h1>
+          <h2>List of favors...</h2>
 
         </FlexWrapper>
     </ColumnFlexWrapper>

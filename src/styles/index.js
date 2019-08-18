@@ -20,4 +20,5 @@ export const ColumnFlexWrapper = styled.div`
 
 export const FlexWrapper = styled.div`
   flex: 1;
+  width: 100%;
 `
