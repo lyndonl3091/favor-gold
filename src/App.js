@@ -8,7 +8,7 @@ import {
   // toSignUp,
   toAddFavor
 } from 'routes'
-import Button from 'components/common/Button'
+import ConnectedButton from 'components/common/ConnectedButton'
 
 const pageStyle = {
   height: '100%',
@@ -30,10 +30,19 @@ export class App extends Component {
         <FlexWrapper>
           <Paper style={pageStyle}>
             <h1>What's yout favor?</h1>
+            {/*
             <Button
               route={toAddFavor}
               label="Add Favor"
             />
+            */}
+            <ConnectedButton
+              variant="contained"
+              color="primary"
+              route={toAddFavor}
+            >
+                Add Favor
+            </ConnectedButton>
           </Paper>
         </FlexWrapper>
 
