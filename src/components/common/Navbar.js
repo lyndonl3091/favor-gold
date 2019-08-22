@@ -19,7 +19,8 @@ const Bar = () => (
             <MenuIcon />
           </IconButton>
           <Button color="inherit" route={toHome}>Home</Button>
-          <Button color="inherit" route={toSignUp}>Log In/Sign Up</Button>
+          <Button color="inherit" route={toLogin}>Log In</Button>
+          <Button color="inherit" route={toSignUp}>Sign Up</Button>
         </Toolbar>
         </AppBar>
     </>

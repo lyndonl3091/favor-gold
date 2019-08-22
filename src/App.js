@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-  SplashWrapper,
   FlexWrapper
 } from 'styles'
 import { ColumnFlexWrapper } from './styles';

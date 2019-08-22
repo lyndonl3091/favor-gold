@@ -20,13 +20,23 @@ export const AddFavor = props => {
         setTitle(val)
     }
 
+    function handleDescription(e) {
+        const val = e.target.value
+        setDescription(val)
+    }
+
     return (
         <form onSubmit={handleSubmit}>
 
             <TextField
-            hintText="Username"
-            floatingLabelText="Username"
+            hintText="Title"
+            floatingLabelText="Title"
             onChange={handleTitle}
+            /> <br/>
+            <TextField
+            hintText="Description"
+            floatingLabelText="Description"
+            onChange={handleDescription}
             /> <br/>
         </form>
     )
